@@ -13,6 +13,7 @@
 
 #include <cvd/image.h>
 #include <cvd/byte.h>
+#include <cvd/image_convert.h>
 #include <cvd/utility.h>
 #include <TooN/TooN.h>
 using namespace TooN;

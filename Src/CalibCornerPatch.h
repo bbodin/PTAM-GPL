@@ -5,6 +5,7 @@
 #define __CALIB_CORNER_PATCH_H
 #include <TooN/TooN.h>
 using namespace TooN;
+#include <cvd/image_convert.h>
 #include <cvd/image.h>
 #include <cvd/byte.h>
 

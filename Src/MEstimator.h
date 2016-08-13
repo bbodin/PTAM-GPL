@@ -75,7 +75,7 @@ inline double Tukey::ObjectiveScore(double dErrorSquared, const double dSigmaSqu
 
 inline double Tukey::FindSigmaSquared(std::vector<double> &vdErrorSquared)
 { 
-  double dSigmaSquared; 
+  double dSigmaSquared;
   assert(vdErrorSquared.size() > 0);
   std::sort(vdErrorSquared.begin(), vdErrorSquared.end());
   double dMedianSquared = vdErrorSquared[vdErrorSquared.size() / 2];

@@ -20,6 +20,7 @@
 #include <TooN/TooN.h>
 using namespace TooN;
 #include <TooN/se3.h>
+#include <cvd/image_convert.h>
 #include <cvd/image.h>
 #include <cvd/byte.h>
 #include <vector>

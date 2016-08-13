@@ -6,7 +6,7 @@
 #include "SmallMatrixOpts.h"
 #include "PatchFinder.h"
 #include "TrackerData.h"
-
+#include <unistd.h>
 #include <cvd/utility.h>
 #include <cvd/gl_helpers.h>
 #include <cvd/fast_corner.h>
