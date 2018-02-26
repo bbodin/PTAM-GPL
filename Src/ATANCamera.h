@@ -103,7 +103,7 @@ class ATANCamera {
   
   // Useful for gvar-related reasons (in case some external func tries to read the camera params gvar, and needs some defaults.)
   static const Vector<NUMTRACKERCAMPARAMETERS> mvDefaultParams;
-  
+
  protected:
   GVars3::gvar3<Vector<NUMTRACKERCAMPARAMETERS> > mgvvCameraParams; // The actual camera parameters
   

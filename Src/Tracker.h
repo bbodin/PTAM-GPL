@@ -125,9 +125,10 @@ protected:
   
   // GUI interface:
   void GUICommandHandler(std::string sCommand, std::string sParams);
-  static void GUICommandCallBack(void* ptr, std::string sCommand, std::string sParams);
   struct Command {std::string sCommand; std::string sParams; };
   std::vector<Command> mvQueuedCommands;
+public :
+  static void GUICommandCallBack(void* ptr, std::string sCommand, std::string sParams);
 };
 
 #endif

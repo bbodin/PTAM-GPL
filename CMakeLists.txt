@@ -3,8 +3,8 @@ cmake_minimum_required(VERSION 2.6.0)
 SET(appname ptam)
 
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O3                  -w ")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O3  --std=c++14 -w ")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O3                  -w -fpermissive")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O3  --std=c++11 -w -fpermissive")
 
 find_package(LAPACK REQUIRED)
 
@@ -86,17 +86,21 @@ set(gui_srcs 	./Src/GLWindow2.h
 set(video_source_srcs 	
 				./Src/VideoSource_Linux_CVD.cc
 				)
+			
+
 				
-add_library(${appname}-original  
-            ${base_srcs} ${atan_srcs}
+add_library(${appname}-original_mp  
+            ${base_srcs} ${atan_srcs} ptam_library.cpp
 )
 
 
-target_link_libraries(${appname}-original
+target_link_libraries(${appname}-original_mp
                       ${GVARS_LIBRARY}
                       ${CVD_LIBRARY}
+                      ${OPENGL_LIBRARIES}
+                      pthread
                       lapack
 )
- 
-add_slambench_binary(${appname}   gui   original "${gui_srcs};${video_source_srcs}" "" "${OPENGL_LIBRARIES};${CVD_LIBRARY};pthread")
+SET_TARGET_PROPERTIES(${appname}-original_mp PROPERTIES COMPILE_FLAGS "-fPIC")
 
+generate_slam_library(${appname}-original_mp "")
