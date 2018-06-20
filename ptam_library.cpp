@@ -257,7 +257,7 @@ static const std::string default_bundle_estimator = "Tukey";
  	slam_settings->GetOutputManager().RegisterOutput(frame_output);
  	frame_output->SetActive(true);
 
- 	 pointcloud_output = new slambench::outputs::Output("PointCloud", slambench::values::VT_POINTCLOUD);
+ 	 pointcloud_output = new slambench::outputs::Output("PointCloud", slambench::values::VT_COLOUREDPOINTCLOUD);
  	 pointcloud_output->SetKeepOnlyMostRecent(true);
  	 slam_settings->GetOutputManager().RegisterOutput(pointcloud_output);
  	 pointcloud_output->SetActive(true);
